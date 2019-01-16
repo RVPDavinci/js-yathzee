@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yathzee</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="rolled">
+            <button class="dice" id="dice1"></button>
+            <button class="dice" id="dice2"></button>
+            <button class="dice" id="dice3"></button>
+            <button class="dice" id="dice4"></button>
+            <button class="dice" id="dice5"></button>
+        </div>
+        <div id="actions">
+            <button id="roll">Roll dice</button>
+        </div>
+
+        <div class="scoresheet">
+            <div class="name">Eenen</div>
+            <div class="text">Alle eenen in de worp</div>
+            <div class="points" id="top_1"></div>
+
+            <div class="name">Twee&euml;n</div>
+            <div class="text">Alle twee&euml;n in de worp</div>
+            <div class="points" id="top_2"></div>
+
+            <div class="name">Drie&euml;n</div>
+            <div class="text">Alle drie&euml;n in de worp</div>
+            <div class="points" id="top_3"></div>
+
+            <div class="name">Vieren</div>
+            <div class="text">Alle vieren in de worp</div>
+            <div class="points" id="top_4"></div>
+
+            <div class="name">Vijven</div>
+            <div class="text">Alle vijven in de worp</div>
+            <div class="points" id="top_5"></div>
+
+            <div class="name">Zessen</div>
+            <div class="text">Alle zessen in de worp</div>
+            <div class="points" id="top_6"></div>
+
+            <div class="score">Subtotaal</div>
+            <div class="points" id="top_subtotal"></div>
+
+            <div class="name">Bonus</div>
+            <div class="text">Subtotaal = 63+ punten? bonus van 35 punten</div>
+            <div class="points" id="bonus">0</div>
+
+            <div class="score">Totaal</div>
+            <div class="points" id="top_total">0</div>
+        </div>
+
+        <div class="scoresheet">
+            <div class="name">2 paar</div>
+            <div class="text">2 paar verschillende en 1 andere<br/>Alle dobbelstenen bij elkaar</div>
+            <div class="points" id="2_pair"></div>
+
+            <div class="name">3 de zelfde</div>
+            <div class="text">Minimaal 3 de zelfde<br/>Alle dobbelstenen bij elkaar</div>
+            <div class="points" id="kind_3"></div>
+
+            <div class="name">4 de zelfde</div>
+            <div class="text">Minimaal 3 de zelfde<br/>Alle dobbelstenen bij elkaar</div>
+            <div class="points" id="kind_4"></div>
+
+            <div class="name">Fullhouse</div>
+            <div class="text">2 en 3 de zelfde (25 punten)</div>
+            <div class="points" id="fullhouse"></div>
+
+            <div class="name">Kleine straat</div>
+            <div class="text">Minimaal 4 op eenvolgende getallen (30 punten)</div>
+            <div class="points" id="str_small"></div>
+
+            <div class="name">Grote straat</div>
+            <div class="text">5 op eenvolgende getallen (40 punten)</div>
+            <div class="points" id="str_big"></div>
+
+            <div class="name">Yathzee</div>
+            <div class="text">Alle dobbelstenen zij het zelfde (50 punten)</div>
+            <div class="points" id="yathzee"></div>
+
+            <div class="name">Keuze</div>
+            <div class="text">Alle dobbelstenen bij elkaar</div>
+            <div class="points" id="chance"></div>
+
+            <div class="score">Subtotaal</div>
+            <div class="points" id="bottom_subtotal">0</div>
+        </div>
+
+        <div id="grandtotal">
+            <h2>Grand totaal</h2>
+            <p id="grand_total">0</p>
+        </div>
+    </div>
+    </div>
+    <script src="yathzee.js" type="application/javascript"></script>
+</body>
+</html>
