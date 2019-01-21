@@ -109,7 +109,7 @@ function scoreDice() {
         setScorePosibilities('-');
         keys = Object.keys(scorePosibilities);
 
-        if(keys > 1){
+        if(keys.length > 1){
             alert('Geen keuze meer, je moet iets wegstrepen');
         }
     }
@@ -253,10 +253,19 @@ function lockDice(index) {
 
         dice[index] = parseInt(dice[index].getAttribute("rel"));
     }
+
+    for (var i=0; i < dice.length; i++){
+        if(!isNumeric(dice[i])) {
+            return;
+        }
+    }
+
+    rollBtn.style.display = "none";
 }
 
 function unlockDice() {
     if(rolls < 3) {
+        rollBtn.style.display = "inline";
         var index = parseInt(this.id.replace("dice", "")) - 1;
         dice[index] = this;
         dice[index].classList.remove("locked");
