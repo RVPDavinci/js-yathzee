@@ -4,12 +4,10 @@
 }
 
 #rolled {
-    display: none;
     margin-bottom: 20px;
     width: 580px;
     height: 110px;
     position: relative;
-    overflow: hidden;
 }
 
 #rolled button {
@@ -20,45 +18,35 @@
     background-repeat: no-repeat;
     border:none;
     position: absolute;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 #rolled button#dice1{
-    left:0px;
+    left:13px;
 }
 #rolled button#dice2{
-    left:110px;
+    left:123px;
 }
 #rolled button#dice3{
-    left:220px;
+    left:233px;
 }
 #rolled button#dice4{
-    left:330px;
+    left:343px;
 }
 #rolled button#dice5{
-    left:440px;
+    left:453px;
 }
 
-#rolled button.rotate {
-    -webkit-animation:spin 2s linear;
-    -moz-animation:spin 2s linear;
-    animation:spin 2s linear;
+#rolled button.roll {
+    cursor: none;
+    -webkit-animation:rolling 2s ease-in;
+    -webkit-animation-fill-mode: both;
+
+    animation:rolling 2s ease-in;
+    animation-fill-mode: both;
 }
-@-moz-keyframes spin {
-    0% { top:-150px; }
-    25% {
-        top:0px;
-        -moz-transform: rotate(1080deg);
-    }
-    50% {
-        top:-80px;
-        -moz-transform: rotate(720deg);
-    }
-    100% {
-        top:0px;
-        -moz-transform: rotate(180deg);
-    }
-}
-@-webkit-keyframes spin {
+@-webkit-keyframes rolling {
     0% { top:-150px; }
     25% {
         top:0px;
@@ -66,29 +54,74 @@
     }
     50% {
         top:-80px;
-        -webkit-transform: rotate(720deg);
+        -webkit-transform: rotate(-720deg);
     }
-    100% {
+
+    70%{
         top:0px;
         -webkit-transform: rotate(180deg);
     }
+
+    85%{
+        top:-45px;
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        top:0px;
+        -webkit-transform: rotate(-360deg);
+    }
 }
-@keyframes spin {
+@keyframes rolling {
     0% { top:-150px; }
     25% {
         top:0px;
-        -webkit-transform: rotate(1080deg);
         transform:rotate(1080deg);
     }
     50% {
         top:-80px;
-        -webkit-transform: rotate(720deg);
-        transform:rotate(720deg);
+        transform:rotate(-720deg);
     }
-    100% {
+
+    70%{
         top:0px;
         -webkit-transform: rotate(180deg);
-        transform:rotate(180deg);
+    }
+    85%{
+        top:-45px;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top:0px;
+        transform: rotate(-360deg);
+    }
+}
+
+#rolled button.pickup {
+    cursor: none;
+    -webkit-animation:pick 1s ease-out;
+    -webkit-animation-fill-mode: forwards;
+
+    animation:pick 1s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes pick{
+    0%{ top:0px; }
+    45% { top:-120px; }
+    100% {
+        left: 223px;
+        top:-150px;
+    }
+}
+
+@keyframes pick {
+    0%{ top:0px; }
+    45% { top:-120px; }
+    100% {
+        left: 223px;
+        top:-150px;
     }
 }
 
@@ -98,6 +131,25 @@
 
 #actions{
     text-align: center;
+    min-height: 20px;
+}
+
+#actions #roll{
+    border: 2px solid;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    animation:suggest 1.2s infinite;
+    -webkit-animation:suggest 1.2s infinite;
+}
+
+#actions #roll.first{
+    padding: 10px;
+    font-size: 30px;
+}
+
+#actions #roll:hover{
+    text-decoration: underline;
 }
 
 .scoresheet{
@@ -174,9 +226,16 @@ div.scoresheet:first-child{
     100%{   background-color: lightyellow;    }
 }
 
+@-webkit-keyframes suggest {
+    0%{     background-color: lightyellow;    }
+    50%{    background-color: white;  }
+    100%{   background-color: lightyellow;    }
+}
+
 .scoresheet div.points.posibility{
     cursor: pointer;
     animation:suggest 1.2s infinite;
+    -webkit-animation:suggest 1.2s infinite;
     color:lightgray;
 }
 
